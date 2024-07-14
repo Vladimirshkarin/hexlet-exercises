@@ -69,3 +69,38 @@ def sub(rat1, rat2):
 
 def to_str(rat):
     return f"{get_numer(rat)}/{get_denom(rat)}"
+
+
+# BEGIN reference solution
+def make_ref(numer, denom):
+    gcd = math.gcd(int(numer), int(denom))
+    return {'numer': numer // gcd, 'denom': denom // gcd}
+
+
+def get_numer_ref(rat):
+    return rat['numer']
+
+
+def get_denom_ref(rat):
+    return rat['denom']
+
+
+def add_ref(rat1, rat2):
+    first_numer = get_numer_ref(rat1)
+    second_numer = get_numer_ref(rat2)
+    first_denom = get_denom_ref(rat1)
+    second_denom = get_denom_ref(rat2)
+    return make_ref(first_numer * second_denom + second_numer * first_denom,
+                    first_denom * second_denom,
+                    )
+
+
+def sub_ref(rat1, rat2):
+    first_numer = get_numer_ref(rat1)
+    second_numer = get_numer_ref(rat2)
+    first_denom = get_denom_ref(rat1)
+    second_denom = get_denom_ref(rat2)
+    return make_ref(first_numer * second_denom - second_numer * first_denom,
+                    first_denom * second_denom,
+                    )
+# END reference solution

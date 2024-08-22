@@ -40,7 +40,9 @@ from hexlet.fs import get_children, get_meta, get_name, is_file, mkdir, mkfile
 def change_meta(node):
     name = get_name(node)
     new_meta = copy.deepcopy(get_meta(node))
-    if name.endswith(".jpg") and isinstance(new_meta.get("size"), (int, float)):
+    if name.endswith(".jpg") and isinstance(
+                                            new_meta.get("size"), (int, float)
+                                            ):
         new_meta["size"] = new_meta["size"] // 2
     if is_file(node):
         return mkfile(name, new_meta)

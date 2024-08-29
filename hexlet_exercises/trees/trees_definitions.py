@@ -36,6 +36,17 @@ def remove_first_level(tree):
 # END
 
 
+# BEGIN (write your solution here)
+def remove_first_level_old(tree):
+    result = []
+    for item in tree:
+        if type(item) is list:
+            for value in item:
+                result.append(value)
+    return result
+# END
+
+
 # BEGIN reference solution
 def remove_first_level_ref(tree):
     children = filter(lambda item: isinstance(item, list), tree)

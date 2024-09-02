@@ -54,3 +54,49 @@
 # легкие
 # Подсказки
 # sort
+from hexlet.fs import get_children, get_meta, get_name, is_file
+
+
+# BEGIN (write your solution here)
+def get_files_size(node):
+    if is_file(node):
+        return int(get_meta(node).get("size"))
+    children = get_children(node)
+    descendant_size = list(map(get_files_size, children))
+    return sum(descendant_size)
+
+
+def du(node):
+    children = get_children(node)
+    result = list(
+        map(
+            lambda child: (get_name(child), get_files_size(child)),
+            children,
+        )
+    )
+    sorted_result = sorted(result, key=lambda x: x[1], reverse=True)
+    return sorted_result
+# END
+
+
+# BEGIN reference solution
+def calculate_entry_size(tree):
+    if is_file(tree):
+        meta = get_meta(tree)
+        return meta["size"]
+    children = get_children(tree)
+    sizes = list(map(calculate_entry_size, children))
+    return sum(sizes)
+
+
+def du_ref(tree):
+    children = get_children(tree)
+    result = list(
+        map(
+            lambda child: (get_name(child), calculate_entry_size(child)),
+            children,
+        )
+    )
+    result.sort(key=lambda entry: entry[1], reverse=True)
+    return result
+# END reference solution

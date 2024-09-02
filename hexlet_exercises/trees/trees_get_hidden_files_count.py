@@ -27,6 +27,9 @@
 # get_hidden_files_count(tree)  # 3
 
 
+from hexlet.fs import get_name, get_children, is_file
+
+
 def get_hidden_files_count(node):
     if is_file(node):
         return 1 if get_name(node).startswith(".") else 0

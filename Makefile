@@ -15,3 +15,6 @@ package-reinstall:
 
 make lint:
 	poetry run flake8 hexlet_exercises
+
+make-test:
+    pytest

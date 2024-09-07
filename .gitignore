@@ -7,4 +7,5 @@ dist/
 coverage.xml
 .pytest_cache/
 .vscode/
-*.DS_Store
+*/.DS_Store
+.DS_Store

@@ -23,5 +23,3 @@ def test_limitedcounter():
     counter.inc(7)
     counter.inc(7)
     assert counter.value == 10
-
-

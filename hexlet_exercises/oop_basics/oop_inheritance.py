@@ -67,7 +67,7 @@ class LimitedCounter(Counter):
 # Если вы просто унаследуете Counter и переопределите
 # метод inc, то такое решение тоже будет правильным.
 # Данное решение нарочно демонстрирует альтернативный подход :)
-class LimitedCounter(Counter):
+class LimitedCounter_ref(Counter):
     """A counter with limited maximal value."""
 
     def __init__(self, limit):

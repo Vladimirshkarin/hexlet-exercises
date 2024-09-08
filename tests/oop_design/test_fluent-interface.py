@@ -9,7 +9,9 @@ raw = [
     {"name": "samarA", "country": "  ruSsiA"},
 ]
 
-expected = [{"russia": ["moscow", "samara"]}, {"turkey": ["antalia", "istambul"]}]
+expected = [
+    {"russia": ["moscow", "samara"]}, {"turkey": ["antalia", "istambul"]}
+    ]
 
 
 def test_format():

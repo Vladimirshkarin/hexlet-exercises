@@ -1,4 +1,4 @@
-from hexlet_exercises.oop_design.fluent-interface import format
+from hexlet_exercises.oop_design.fluent import format
 
 
 raw = [
